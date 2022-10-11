@@ -47,52 +47,45 @@ public class BubbleSort3 {
 	
 	public void startSort()
 	{
-		if(getSortBy() == 1) ascSort();
-		else descSort();
-	}
-	
-	public void ascSort()
-	{
-		int compareCnt = arr.length - 1;
 		int box;
+		boolean swapFlag = false;
 		
 		for(int i = 0; i < arr.length - 1; i++)
 		{
-			for(int j = 0; j < compareCnt; j++)
+			for(int j = 0; j < arr.length - 1 - i; j++)
 			{
-				if(arr[j] > arr[j+1])
+				if(getSortBy() == 1)
 				{
-					box = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = box;
+					if(arr[j] > arr[j+1])
+					{
+						box = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = box;
+						
+						swapFlag = true;
+					}
+				}
+				else {
+					if(arr[j] < arr[j+1])
+					{
+						box = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = box;
+						
+						swapFlag = true;
+					}
 				}
 			}
-			
-			compareCnt--;
-		}
-	}
-	
-	public void descSort()
-	{
-		int compareCnt = arr.length - 1;
-		int box;
-		
-		for(int i = 0; i < arr.length - 1; i++)
-		{
-			for(int j = 0; j < compareCnt; j++)
+			if(swapFlag == false)
 			{
-				if(arr[j] < arr[j+1])
-				{
-					box = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = box;
-				}
+				return;
 			}
-			
-			compareCnt--;
+			else 
+			{
+				swapFlag = false;
+			}
 		}
 	}
-	
 	
 	///////////////////////////////////////////////////////////////////////////////////
 	// Print arr
