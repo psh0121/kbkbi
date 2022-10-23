@@ -32,9 +32,9 @@ public class CompFriend extends Friend {
 	
 	public void showInfo()
 	{
-		System.out.println("이름 : " + getName());
+		System.out.println("이름 : " + super.getName());
 		System.out.println("부서 : " + dept);
-		System.out.println("전화번호 : " + getPhone());
+		System.out.println("전화번호 : " + super.getPhone());
 	}
 	
 }
