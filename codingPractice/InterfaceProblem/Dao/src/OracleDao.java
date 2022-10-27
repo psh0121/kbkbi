@@ -1,0 +1,24 @@
+
+public class OracleDao implements DataAccessObject{
+	String name = "Oracle DB";
+	
+	public void select()
+	{
+		System.out.println(name + "에서 검색");
+	}
+	
+	public void insert()
+	{
+		System.out.println(name + "에 삽입");
+	}
+	
+	public void update()
+	{
+		System.out.println(name + "를 수정");
+	}
+	
+	public void delete()
+	{
+		System.out.println(name + "에서 삭제");
+	}
+}
