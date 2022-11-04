@@ -1,25 +1,25 @@
 -- 테이블 생성
-create table usertbl 							-- 회원테이블
+create table usertbl 					-- 회원테이블
 (
 	userID char(20) not null primary key,		-- 아이디
-    name varchar(20) not null,					-- 이름
-    birthYear int not null,						-- 생년
-    addr char(2) not null,						-- 지역
-    mobile1 char(3),							-- 국번
-    mobile2 char(8),							-- 전화번호
-    height smallint,							-- 키
-    mDate date									-- 가입일
+    	name varchar(20) not null,			-- 이름
+    	birthYear int not null,				-- 생년
+    	addr char(2) not null,				-- 지역
+	mobile1 char(3),				-- 국번
+    	mobile2 char(8),				-- 전화번호
+    	height smallint,				-- 키
+    	mDate date					-- 가입일
 );
 
-create table buytbl									-- 구매테이블
+create table buytbl					-- 구매테이블
 (
 	num int not null primary key auto_increment,	-- 순번
-    userID char(20) not null,						-- 아이디
-    prodName varchar(20) not null,					-- 품명
-    groupName char(4),								-- 분류
-    price int not null,								-- 단가
-    amount smallint not null,						-- 수량
-    foreign key (userID) references usertbl(userID)
+   	userID char(20) not null,			-- 아이디
+    	prodName varchar(20) not null,			-- 품명
+    	groupName char(4),				-- 분류
+    	price int not null,				-- 단가
+    	amount smallint not null,			-- 수량
+    	foreign key (userID) references usertbl(userID)
 );
 
 
