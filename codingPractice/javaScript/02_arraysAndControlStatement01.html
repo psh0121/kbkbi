@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+
+      // MDN에서 splice함수를 찾고 예제를 실행해 봅시다.
+
+      // 예제1) 하나도 제거하지 않고, 2번 인덱스에 "drum" 추가
+      let myFish1 = ['angel', 'clown', 'mandarin', 'sturgeon'];
+      let remove1 = myFish1.splice(2, 0, 'drum');
+        
+      console.log(myFish1);
+
+      // -----------------------------------------------------------------------
+
+      // 예제2) 하나도 제거하지 않고, 2번 인덱스에 "drum"과 "guitar" 추가
+      let myFish2 = ['angel', 'clown', 'mandarin', 'sturgeon'];
+      let remove2 = myFish2.splice(2, 0, 'drum', 'guitar');
+
+      console.log(myFish2);
+
+      // ---------------------------------------------------------------------
+
+      // 예제3) 3번 인덱스에서 한 개 요소 제거
+      let myFish3 = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+      let remove3 = myFish3.splice(3, 1);
+
+      console.log(myFish3);
+
+      // ---------------------------------------------------------------------
+
+      // 예제4) 2번 인덱스에서 한 개 요소 제거하고 "trumpet" 추가
+      let myFish4 = ['angel', 'clown', 'drum', 'sturgeon'];
+      let remove4 = myFish4.splice(2, 1, 'trumpet');
+
+      console.log(myFish4);
+
+      // ---------------------------------------------------------------------
+
+      // 예제5) 0번 인덱스에서 두 개 요소 제거하고 "parrot", "anemone", "blue" 추가
+      let myFish5 = ['angel', 'clown', 'trumpet', 'sturgeon'];
+      let remove5 = myFish5.splice(0, 2, 'parrot', 'anemone', 'blue');
+
+      console.log(myFish5);
+
+      // ---------------------------------------------------------------------
+
+      // 예제6) 2번 인덱스에서 두 개 요소 제거
+      let myFish6 = ['parrot', 'anemone', 'blue', 'trumpet', 'sturgeon'];
+      let remove6 = myFish6.splice(2, 2);
+
+      console.log(myFish6);
+
+      // ---------------------------------------------------------------------
+
+      // 예제7) -2번 인덱스에서 한 개 요소 제거
+      let myFish7 = ['angel', 'clown', 'mandarin', 'sturgeon'];
+      let remove7 = myFish7.splice(-2, 1);
+
+      console.log(myFish7);
+
+      // ---------------------------------------------------------------------
+
+      // 예제8) 2번 인덱스를 포함해서 이후의 모든 요소 제거
+      let myFish8 = ['angel', 'clown', 'mandarin', 'sturgeon'];
+      let remove8 = myFish8.splice(2);
+
+      console.log(myFish8);
+
+    </script>
+</body>
+</html>
+
