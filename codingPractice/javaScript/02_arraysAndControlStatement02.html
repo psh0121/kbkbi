@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // “동해물과 백두산이 마르고 닳도록“에서 백두산을 제거하시오
+
+    let song = '동해물과 백두산이 백두 백두 백두산 마르고 닳도록 백두산';
+    let arrSong = [...song];    // spread 연산자
+    let word = '백두산';
+        
+    while(true)
+    {
+      // 문자열에 특정단어 위치 찾기
+      let findWordIndex = song.indexOf(word);
+
+      if(findWordIndex === -1)    // 더이상 문자열에 특정단어가 없다면 ---> 반복문 종료
+        break;
+
+      // 특정 단어 날려버리기
+      arrSong.splice(findWordIndex, word.length);
+
+      // 문자열 재설정
+      song = arrSong.join("");
+    }
+
+    console.log(song);
+
+    // ---------------------------------------------------------------------
+
+    // “동해물과 백두산이 마르고 닳도록“에서 백두산을 제거하시오
+    // 토큰분리 방식
+
+    const str = '동해물과 백두산이 백두 백두 백두산 마르고 닳도록 백두산';
+    const ar = str.split('백두산');
+
+    let result = '';
+
+    for(let i = 0; i < ar.length; i++)
+    {
+      result = result + ar[i];
+    }
+
+    console.log(result);
+  </script>
+</body>
+</html>
