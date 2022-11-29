@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+            const studnet = {
+                name : '홍길동',
+                age : 26,
+                number : 1,
+                grade : [50, 80, 56],
+                getTotal : function() {
+                    let total = 0;
+
+                    /*
+                    this : 해당 메소드를 소유하고 있는 객체의 시작정보
+                    = getTotal 메소드를 소유하고 있는 student객체의 시작정보를 의미한다.
+
+                    this는 생략하면 안된다. ==> 명시적으로 표기하지 않으면 내꺼인지 누구꺼인지 모른다.
+                    student.grade는 동작 잘됨 ==> 이말은 this와 student는 같다는 의미이다.
+                    */
+                   
+                    for(const val of this.grade)
+                    {
+                        total = total + val;
+                    }
+                    
+                    return total;
+                },
+                printName : function() {
+                    // 이름을 콘솔에 출력해주는 메소드 printName
+                    console.log(this.name);
+                }
+            };
+            
+            console.log(studnet);
+            console.log(studnet.name);
+            console.log(studnet.age);
+            console.log(studnet['number']);
+            console.log(studnet['grade']);
+            console.log(studnet.grade[0]);
+            console.log(studnet.grade[1]);
+            console.log(studnet.grade[2]);
+            console.log(studnet.getTotal);
+            console.log(studnet.getTotal());    // method
+            console.log(studnet.printName());   // method
+        })();
+    </script>
+</body>
+</html>
