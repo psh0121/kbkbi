@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        - 환자 정보를 저장.
+        - 환자이름, 나이, 주소, 질병정보
+        - 질병정보는 질병코드, 병명
+        환자 정보 구조를 클로저를 이용하여 구현하시오.
+        */
+
+        const registerPatient = function(name, age, addr, diseaseInfo)
+        {
+            return {
+                getName: function()
+                {
+                    return name;
+                },
+                getAge : function()
+                {
+                    return age;
+                },
+                getAddr : function()
+                {
+                    return addr;
+                },
+                getDiseaseInfo : function()
+                {
+                    return diseaseInfo;
+                },
+                getDiseaseCode : function()
+                {
+                    return diseaseInfo.code;
+                },
+                getDiseaseName : function()
+                {
+                    return diseaseInfo.name;
+                },
+                setName : function(_name)
+                {
+                    name = _name;
+                },
+                setAge : function(_age)
+                {
+                    age = _age;
+                },
+                setAddr : function(_addr)
+                {
+                    addr = _addr;
+                },
+                setDiseaseInfo : function(_diseaseInfo)
+                {
+                    diseaseInfo = _diseaseInfo;
+                },
+                setDiseaseInfoName : function(_diseaseInfoName)
+                {
+                    diseaseInfo.name = _diseaseInfoName;
+                },
+                setDiseaseInfoCode : function(_diseaseInfoCode)
+                {
+                    diseaseInfo.code = _diseaseInfoCode;
+                }
+            };
+        };
+        
+        const patient1 = registerPatient('홍길동', 20, '서울특별시', {name: '감기', code: 'C0001'});
+        
+        console.log(patient1.getName());
+        console.log(patient1.getAge());
+        console.log(patient1.getAddr());
+        console.log(patient1.getDiseaseInfo());
+
+    </script>
+</body>
+</html>
