@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+            // statement + heap에 저장한다.
+            const product = {
+                name : 'mouse',
+                type : 'wireless',
+                color : 'black',
+                butoons : 6,
+                scroll : true
+            };
+
+            // 객체 value값 조회하기
+            console.log(product);
+            console.log(typeof(product));
+            console.log(product.name);
+            console.log(product.scroll);
+            console.log(product.butoons);
+            console.log(product['name']);
+
+            const a = 'scroll';
+
+            console.log(product[a]);
+            console.log(product[`${a}`]);
+
+            // 객체 값 추가하기
+            product.led = true;
+
+            console.log(product);
+
+            // 객체 값 수정하기
+            product.butoons = 7;
+
+            console.log(product);
+
+            // 객체 값 삭제하기
+            delete product.butoons;
+
+            console.log(product);
+            
+        })();
+    </script>
+</body>
+</html>
