@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const makeInstance = function(title)
+        {
+            // 객체를 힙에 할당하고 그 시작정보(레퍼런스)를 리턴한다.
+
+            // 1. 시작 : return {}
+
+            // 2. 객체안에 메소드 추가 : 메소드가 접근하는 데이터가 메소드 내에 없으므로
+            // 상위함수에 존재하는 데이터(파라미터)를 접근한다.
+
+            return {
+                getTitle : function()
+                {
+                    return title;
+                },
+                setTitle : function(_title)
+                {
+                    title = _title;
+                }
+            };
+        };
+
+        const book1 = makeInstance('알기쉬운 자바스크립트');
+
+        book1.getTitle();
+        book1.setTitle('알기쉬운 자바');
+    </script>
+</body>
+</html>
