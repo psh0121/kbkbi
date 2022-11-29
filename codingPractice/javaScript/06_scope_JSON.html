@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = [
+            {
+                title : '알기쉬운 자바스크립트',
+                price : 20000,
+                type : 'paper'
+            },
+            {
+                title : '자바스크립트',
+                price : 0,
+                type : 'ebook'
+            }
+        ];
+
+        // 문자데이터로 보내줘야해
+        const json_text = JSON.stringify(books, null, 2);
+        console.log(json_text);
+
+        // json_text를 객체로 만들수도 있어야한다.
+        const json_object = JSON.parse(json_text);
+        console.log(json_object);
+    </script>
+</body>
+</html>
