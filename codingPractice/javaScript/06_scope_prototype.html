@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Number.prototype.power = function(n)
+        {
+            return this.valueOf() ** n;
+        }
+
+        /*
+        내가 prototype에 power라는 메소드를 추가로 만들면
+        이후에 사용되는 Number객체의 prototype에 power가 붙어
+        기능을 사용할 수 있게된다.
+        ==> 프로토타입 상속
+        */
+
+        const a = 10;
+
+        console.log(a.power(2));
+    </script>
+</body>
+</html>
