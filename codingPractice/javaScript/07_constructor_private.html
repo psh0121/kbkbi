@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    class Rectangle {
+      constructor(width, height)
+      {
+        this.width = width;
+        this.height = height;
+      }
+      
+      getPerimeter()
+      {
+        return (this.width + this.height) * 2;
+      }
+      
+      getArea()
+      {
+        return this.width * this.height;
+      }
+    }
+
+    // 정사각형 클래스 (상속)
+    class Square
+    {
+      // length는 이제부터 private이야. 라고 선언하는 코드
+      // 정보은닉, 데이터의 무결성
+      // 목적1) 외부에서 아무렇게 셋팅 못하게 하겠다.
+      // 목적2) 올바른 값이 들어가게끔 하겠다.
+      #length;
+      
+      constructor(length)
+      {
+        if(length < 0)
+        {
+          throw '생성자 파라미터가 잘못되었습니다.';
+        }
+        if(isNaN(length))
+        {
+          throw '생성자 타입이 잘못되었습니다.';
+        }
+        this.#length = length;
+      }
+      
+      getPerimeter()
+      {
+        return 4 * this.#length;
+      }
+
+      getArea()
+      {
+        return this.#length * this.#length;
+      }
+
+      getLength()
+      {
+        return this.#length;
+      }
+
+      setLength(_length)
+      {
+        this.#length = _length;
+      }
+    }
+
+    const rect = new Square(10);
+    console.log('length = ' + rect.getLength());
+    console.log('area = ' + rect.getArea());
+    console.log('perimeter = ' + rect.getPerimeter());
+
+    rect.setLength(5);
+    console.log(rect.getLength());
+    console.log(rect);
+  </script>
+</body>
+</html>
