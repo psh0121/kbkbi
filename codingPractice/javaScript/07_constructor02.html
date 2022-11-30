@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 원의 정보를 저장하는 클래스를 구현
+    //      원의 반지름, 원주율
+    //      둘레길이, 원의 넓이를 구할 수 있어야 한다.
+    // constructor, getter, setter
+    // 둘레길이를 구하는 메소드
+    // 원의 넓이를 구하는 메소드
+
+    class Circle 
+    {
+      // private
+      #radius;
+      #pi;
+
+      // constructor
+      constructor(radius)
+      {
+        if(radius < 0)
+        {
+          throw '[ERROR] radius range';
+        }
+        if(isNaN(radius))
+        {
+          throw '[ERROR] radius is NaN';
+        }
+        this.#radius = radius;  // 반지름
+        this.#pi = Math.PI;     // pi
+      }
+      
+      //getter
+      get radius()
+      {
+        return this.#radius;
+      }
+
+      // setter
+      set radius(_radius)
+      {
+        if(_radius < 0)
+        {
+          throw '[ERROR] radius range';
+        }
+        if(isNaN(_radius))
+        {
+          throw '[ERROR] radius is NaN';
+        }
+        this.#radius = _radius;
+      }
+
+      // 둘레길이 2ㅠr
+      getPerimeter ()
+      {
+        return (2 * this.#pi * this.#radius).toFixed(2);
+      }
+
+      // 원의 넓이 ㅠr제곱
+      getArea ()
+      {
+        return (this.#pi * this.#radius * this.#radius).toFixed(2);
+      }
+    }
+    
+    const cir = new Circle(4);
+    console.log('반지름 = ' + cir.radius);
+    console.log('둘레길이 = ' + cir.getPerimeter());
+    console.log('넓이 = ' + cir.getArea())
+    console.log('--------------------------------');
+    
+    cir.radius = 5;
+    console.log('반지름 = ' + cir.radius);
+    console.log('둘레길이 = ' + cir.getPerimeter());
+    console.log('넓이 = ' + cir.getArea());
+  </script>
+</body>
+</html>
