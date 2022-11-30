@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Rectangle {
+      constructor(width, height)
+      {
+        this.width = width;
+        this.height = height;
+      }
+
+      getPerimeter()
+      {
+        return (this.width + this.height) * 2;
+      }
+
+      getArea()
+      {
+        return this.width * this.height;
+      }
+    }
+
+    class Square extends Rectangle
+    {
+      constructor(length)
+      {
+        // super는 가장 위에 있어야 한다.
+        super(length, length);
+      }
+    }
+
+    const rect = new Rectangle(10, 45);
+    console.log(rect.width);
+    console.log(rect.height);
+    console.log(rect.getArea());
+    console.log(rect.getPerimeter());
+
+    const rect2 = new Square(5);
+    console.log(rect2.width);
+    console.log(rect2.height);
+    console.log(rect2.getArea());
+    console.log(rect2.getPerimeter());
+  </script>
+</body>
+</html>
