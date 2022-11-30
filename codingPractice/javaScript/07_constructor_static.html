@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 원의 정보를 저장하는 클래스를 구현
+  //      원의 반지름, 원주율
+  //      둘레길이, 원의 넓이를 구할 수 있어야 한다.
+  // constructor, getter, setter
+  // 둘레길이를 구하는 메소드
+  // 원의 넓이를 구하는 메소드
+  class Circle 
+  {
+    // private
+    #radius;
+
+    // static은 초기값 넣어주는게 일반적이다.
+    static #pi = 3.14;
+    static #count = 0; 
+    
+    // static과 관련된 메소드들도 앞에 static을 붙여줘야 한다.
+    static get count()
+    {
+      return Circle.#count;
+    }
+    static get pi()
+    {
+      return Circle.#pi;
+    }
+
+    // constructor
+    constructor(radius)
+    {
+      if(radius < 0)
+      {
+        throw '[ERROR] radius range';
+      }
+      if(isNaN(radius))
+      {
+        throw '[ERROR] radius is NaN';
+      }
+      this.#radius = radius;  // 반지름
+      Circle.#count++;
+    }
+
+    //getter
+    get radius()
+    {
+      return this.#radius;
+    }
+
+    // setter
+    set radius(_radius)
+    {
+      if(_radius < 0)
+      {
+        throw '[ERROR] radius range';
+      }
+      if(isNaN(_radius))
+      {
+        throw '[ERROR] radius is NaN';
+      }
+      this.#radius = _radius;
+    }
+
+    // 둘레길이 2ㅠr
+    getPerimeter ()
+    {
+      return (2 * Circle.#pi * this.#radius).toFixed(2);
+    }
+
+    // 원의 넓이 ㅠr제곱
+    getArea ()
+    {
+      return (Circle.#pi * this.#radius * this.#radius).toFixed(2);
+    }
+  }
+
+  const c1 = new Circle(4);
+  console.log(c1.radius);
+  console.log(c1.getPerimeter());
+  console.log(c1.getArea());
+  console.log(Circle.count);
+  
+  const ar = [new Circle(10),new Circle(10),new Circle(10)];
+  console.log(Circle.count);
+</script>
+</body>
+</html>
