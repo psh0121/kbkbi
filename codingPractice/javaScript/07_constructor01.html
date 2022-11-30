@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // construct function
+    // 학생 학생이름, 학번, 성적[국, 영, 수]
+    // 총점, 평균
+    const Student = function(name, number)
+    {
+      this.name = name;
+      this.number = number;
+      this.score = {
+        kor : 0,
+        eng : 0,
+        math : 0
+      };
+      this.getTotal = function()
+      {
+        return this.score.kor + this.score.eng + this.score.math;
+      };
+      this.getAvg = function()
+      {
+        const total = this.getTotal();
+        if(total === 0)
+          return 0;
+        else
+          return (this.getTotal() / 3).toFixed(2);
+      }
+    }
+
+    const st1 = new Student('psh', 1);
+
+    console.log(st1.name);
+    console.log(st1.number);
+
+    st1.score.kor = 80;
+    st1.score.eng = 90;
+    st1.score.math = 88;
+
+    console.log(st1.getTotal());
+    console.log(st1.getAvg());
+
+    // 1. new - 클래스가 없으니 빈객체를 만든다.
+    // 2. myFunc를 실행시킨다. --> 빈객체의 참조값을 myFunc의 this로 넘겨버림
+    // 3. myFunc은 빈객체를 접근하기 위해서 this로 접근이 가능해 지는 것이다. 
+  </script>
+</body>
+</html>
