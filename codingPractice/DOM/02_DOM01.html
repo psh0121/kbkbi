@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <p>이메일 형식 : NO</p>
+  <script>
+    // 조건)
+    // - @가 1개 있어야함.
+    // - @ 뒤에 .이 있어야 함
+    // - @ 앞에 text가 존재해야 함
+    // 1. element를 가져온다.
+    const textElem = document.querySelector('input');
+    const pElem = document.querySelector('p');
+    // 2. 키보드를 입력할때마다 이메일인지 확인하는 이메일 발동!!!
+    const checkEmail = function(event)
+    {
+      const str = '이메일 형식 : ';
+      let typingValue = textElem.value;   // 내가 입력한 text값 
+      // STEP01 > @가 여러개 입력되어있거나 없을 경우 --> NO!!
+      if((typingValue.indexOf('@') === -1) ||
+        (typingValue.indexOf('@') !== typingValue.lastIndexOf('@')))
+      {
+        pElem.textContent = str + 'NO';
+        return;
+      }
+      // STEP02 > @뒤에 .이 없을 경우 --> NO!!
+      // @위치보다 .위치가 더 낮은 값이거나 -1이 나올경우는 
+      // typingValue에 .이 없거나 @이 앞에 .이 있는 것이다.
+      else if(typingValue.lastIndexOf('.') < typingValue.indexOf('@'))
+      {
+        pElem.textContent = str + 'NO';
+        return;
+      }
+      // STEP03 > @앞에 text가 없으면 --> NO!!
+      // @의 위치가 0이라면 @앞에 text가 없다는 의미이다. 
+      else if(typingValue.indexOf('@') === 0)
+      {
+        pElem.textContent = str + 'NO';
+        return;
+      }
+      // 그외의 나머지 --> YES!!
+      else
+      {
+        pElem.textContent = str + 'YES';
+        return;
+      }
+    };
+    textElem.addEventListener("keyup", checkEmail);
+  </script>
+</body>
+</html>
