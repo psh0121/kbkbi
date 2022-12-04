@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .title {
+      color: red;
+    }
+  </style>
+  <script>
+    // CSS가 javaScript보다 빠르기 때문에 CSS와 접목을 잘 한다.
+    // 드로잉을 빠르게 할 수 있는 기술적인데 CSS엔진이 좀 더 준비되어 있다.
+    // CSS엔진이 V8엔진보다 빠른 경향이 있다.
+    
+    document.addEventListener("DOMContentLoaded", () => {
+
+      let bRed = false;
+      const btnToggle = document.querySelector('input');  
+      const h1Elems = document.querySelectorAll('h1');
+      btnToggle.addEventListener('click', () => {
+        if(bRed === false)
+        {
+          for(const h1Elem of h1Elems)
+          {
+            h1Elem.setAttribute('class', 'title');
+          }
+        }
+        else
+        {
+          for(const h1Elem of h1Elems)
+          {
+            h1Elem.setAttribute('class', '');
+          }
+        }
+        bRed = !bRed;
+      });
+    })
+  </script>
+</head>
+<body>
+  <input type="button" value="색을 변경">
+  <h1>Hello</h1>
+  <h1>World</h1>
+</body>
+</html>
