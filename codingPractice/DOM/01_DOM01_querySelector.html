@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #id_h1 {color: aqua;}
+  </style>
+</head>
+<body>
+  <h1>Hello</h1>
+  <h1 style="color: blue;">Welcome</h1>
+  <h1 id="id_h1">Hi</h1>
+
+  <!-- 
+    목적 : h1 element를 제어하고 싶다.
+    1. h1 엘리먼트를 찾는다.
+    2. 찾은 엘리먼트를 설정한다.
+    3. 다시 그려준다 ==> 브라우저가 알아서 다시 설정해줌.
+    -------------------------------------------
+    1. h1 엘리먼트를 찾는다.
+    2. h1 엘리먼트의 색을 붉은 색으로 설정한다.
+    3. 다시 그려준다.
+   -->
+
+  <script>
+    // 내가 원하는 document의 엘리먼트를 찾아주는 것
+    const h1Elem = document.querySelector('h1');
+
+    h1Elem.style.color = 'red';
+
+    console.log(h1Elem);
+  </script>
+</body>
+</html>
