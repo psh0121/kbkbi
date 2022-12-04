@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="main-title">Hello World</h1>
+
+  <script>
+    // main-title의
+    // 1. 글자색을 붉은색으로
+    // 2. 백그라운드 색은 검정색으로
+    // 3. 글자를 Hello World => Welcome Hello World
+    // 4. padding을 5px
+
+    const h1Elem = document.querySelector('.main-title');
+
+    h1Elem.style = 'color: red; background-color: black; padding: 5px';
+    h1Elem.textContent = 'Wecome Hello World';
+
+    console.log(h1Elem);
+  </script>
+</body>
+</html>
