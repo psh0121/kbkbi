@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      // 문제
+      // 5개의 h1 엘리먼트들의 스타일 속성을 변경해 주세요.
+      
+      const h1Elements = document.querySelectorAll('h1');
+
+      // 방법 1)
+      // h1Elements.forEach((el) => {
+      //   el.style.color = 'red';
+      //   el.style.backgroundColor = 'blue';
+      // })
+
+      // 방법 2)
+      for(const el of h1Elements)
+      {
+        el.style.color = 'red';
+        el.style.backgroundColor = 'blue';
+      }
+    })
+  </script>
+</head>
+<body>
+  <h1>h1</h1>
+  <h1>h2</h1>
+  <h1>h3</h1>
+  <h1>h4</h1>
+  <h1>h5</h1>
+</body>
+</html>
