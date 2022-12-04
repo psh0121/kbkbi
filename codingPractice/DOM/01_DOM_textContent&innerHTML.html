@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="a"></h1>
+  <h1 id="b"></h1>
+  <script>
+    // element.textContext ==> 순수하게 row data가 들어갈때 사용
+    // element.innerHTML ==> 들어가야할게 태그와 함께일 경우 사용
+    const aElem = document.querySelector('#a');
+    const bElem = document.querySelector('#b');
+
+    aElem.textContent = '<h1>textContent</h1>';
+    bElem.innerHTML = '<h1>innerHTML</h1>';
+  </script>
+</body>
+</html>
