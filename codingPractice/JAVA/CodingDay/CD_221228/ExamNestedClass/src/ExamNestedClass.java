@@ -22,7 +22,7 @@ class Outer		// Outer Class
 		}
 }
 
-public class ExamNestedClass1 {
+public class ExamNestedClass {
 
 	public static void main(String[] args) 
 	{
